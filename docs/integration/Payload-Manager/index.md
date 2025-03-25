@@ -3,9 +3,9 @@ tags:
 - integration
 - payload-manager
 ---
-[TOC]
-
 # Payload Manager
+
+[TOC]
 
 Payload Manager is a service supported by the Integration Team for handling file transfer between services. This solves the `claim check pattern` where services can upload a file to a managed storage container and a claim check event is generated onto a Kafka topic. Other systems can then subscribe to said Kafka topic, receive information when a new file is available, and download the file themselves from the storage account.
 
