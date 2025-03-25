@@ -1,0 +1,25 @@
+meta {
+  name: Create Blob
+  type: http
+  seq: 2
+}
+
+put {
+  url: {{hostUrl}}/{{containerName}}/{{blob}}
+  body: none
+  auth: bearer
+}
+
+headers {
+  x-ms-blob-type: BlockBlob
+  x-ms-version: 2025-01-05
+  x-ms-client-request-id: user-id
+}
+
+auth:bearer {
+  token:
+}
+
+vars:pre-request {
+  blob: path/to/test.json
+}

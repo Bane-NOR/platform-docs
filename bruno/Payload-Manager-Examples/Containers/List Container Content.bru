@@ -1,0 +1,25 @@
+meta {
+  name: List Container Content
+  type: http
+  seq: 1
+}
+
+get {
+  url: {{hostUrl}}/{{containerName}}?restype=container&comp=list
+  body: none
+  auth: bearer
+}
+
+query {
+  restype: container
+  comp: list
+}
+
+headers {
+  x-ms-version: 2025-01-05
+  Date: Fri, 21 Feb 2025 13:30:00 GMT
+}
+
+auth:bearer {
+  token:
+}
