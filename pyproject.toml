@@ -1,0 +1,27 @@
+[tool.poetry]
+name = "platform-docs"
+version = "0.1.0"
+description = "External documentation for the platform"
+authors = ["Integration team <integrasjonsteamet@banenor.no>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.11"
+mkdocs = "^1.5.3"
+pygments = "^2.17.2"
+pymdown-extensions = "^10.7"
+mkdocs-material = "^9.5.4"
+mkdocs-glightbox = "^0.3.6"
+mkdocs-git-revision-date-localized-plugin = "^1.2.2"
+mkdocs-markdownextradata-plugin = "^0.2.5"
+mdx-include = "^1.4.2"
+mkdocs-redoc-tag = "^0.1.0"
+mkdocs-awesome-nav = "^3.0"
+
+
+[tool.poetry.group.dev.dependencies]
+pre-commit = "^3.4.0"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
