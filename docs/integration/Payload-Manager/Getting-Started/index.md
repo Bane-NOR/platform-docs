@@ -55,10 +55,20 @@ read more about how this works and how to use it [here](Folder-Access-Control.md
 
 If you have any questions or need further assistance, feel free to reach out!
 
-  <div class="next-step-card-container">
+## API Management DNS
+
+We have different API Management instances depending on the environment you will be using.
+
+| Environment    | DNS |
+| -------- | ------- |
+| Dev  | <https://dev.api.apps.banenor.no>     |
+| Test/Staging | <https://test.api.apps.banenor.no>    |
+| Prod    | <https://api.banenor.no>   |
+
+  <!-- <div class="next-step-card-container">
     <div class="next-step-card">
         <h3>Next Step: Get familiar with Payload Manager</h3>
         <p><a href="/integration/Integration-platform/Payload-Manager/Getting-Started/API-and-Access-Control/">&#8594; Journey: Payload Manager security.</a></p>
         <p><a href="/integration/Integration-platform/Payload-Manager/User-Guides/How-to-Upload-and-Download-files/">&#8594; How to upload files.</a></p>
     </div>
-</div>
+</div> -->
