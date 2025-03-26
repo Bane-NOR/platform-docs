@@ -1,13 +1,5 @@
-# Skyporten
-
-Skyporten is a service from DigDir, created to allow Norwegian companies to share data between themselves using
-MaskinPorten as an external iDP token provider and exchanging said token with your own cloud environment such as
-GCP, Azure, or AWS. A detailed drawing from DigDir showcasing the flow can be seen from
-[DigDirs documentation](https://docs.digdir.no/docs/Maskinporten/maskinporten_skyporten).
-
 ---
 tags:
-
 - integration
 - payload-manager
 - API
@@ -15,8 +7,14 @@ tags:
 - storage
 - skyporten
 - access
-
 ---
+
+# Skyporten
+
+Skyporten is a service from DigDir, created to allow Norwegian companies to share data between themselves using
+MaskinPorten as an external iDP token provider and exchanging said token with your own cloud environment such as
+GCP, Azure, or AWS. A detailed drawing from DigDir showcasing the flow can be seen from
+[DigDirs documentation](https://docs.digdir.no/docs/Maskinporten/maskinporten_skyporten).
 
 ## What does the Integration Platform provide
 
