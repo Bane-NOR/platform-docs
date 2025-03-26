@@ -1,18 +1,18 @@
-# Uploading and Downloading files
-
-The following guide will show you how you can start uploading or downloading files from storage.
-
 ---
 tags:
-
 - integration
 - payload-manager
 - API
 - blobs
 - storage
 - guide
-
+- .NET
+- C#
 ---
+
+# Uploading and Downloading files
+
+The following guide will show you how you can start uploading or downloading files from storage.
 
 ## Dependencies
 

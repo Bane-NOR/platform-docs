@@ -1,15 +1,13 @@
-# Getting Started
-
 ---
 tags:
-
 - integration
 - payload-manager
 - API
 - blobs
 - storage
-
 ---
+
+# Getting Started
 
 The goal of this guide is to give a quick introduction to how one can get access to and start using the Payload Manager in BaneNOR.
 
