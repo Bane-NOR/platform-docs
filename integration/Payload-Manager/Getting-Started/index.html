@@ -406,13 +406,6 @@
 </nav>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#folder-access-control">
-<span class="md-ellipsis">
-      Folder Access Control
-    </span>
-</a>
-</li>
-<li class="md-nav__item">
 <a class="md-nav__link" href="#api-management-dns">
 <span class="md-ellipsis">
       API Management DNS
@@ -428,14 +421,12 @@
 <article class="md-content__inner md-typeset">
 <h1 id="getting-started">Getting Started<a class="headerlink" href="#getting-started" title="Permanent link">¶</a></h1>
 <hr/>
-<p>tags:</p>
-<ul>
-<li>integration</li>
-<li>payload-manager</li>
-<li>API</li>
-<li>blobs</li>
-<li>storage</li>
-</ul>
+<p>tags:
+- integration
+- payload-manager
+- API
+- blobs
+- storage</p>
 <hr/>
 <p>The goal of this guide is to give a quick introduction to how one can get access to and start using the Payload Manager in BaneNOR.</p>
 <div class="toc">
@@ -450,7 +441,6 @@
 <li><a href="#accessing-the-payload-manager">Accessing the Payload Manager</a></li>
 </ul>
 </li>
-<li><a href="#folder-access-control">Folder Access Control</a></li>
 <li><a href="#api-management-dns">API Management DNS</a></li>
 </ul>
 </li>
@@ -467,21 +457,15 @@ To start this onboarding process, you should have talked with your BaneNOR colla
 <p>If your domain is already set up within the payload manager, we simply need to grant you the necessary permissions to start using it.</p>
 <h2 id="using-the-payload-manager">Using the Payload Manager<a class="headerlink" href="#using-the-payload-manager" title="Permanent link">¶</a></h2>
 <p>Once you have access to the appropriate domain within the storage account, you can use the API to upload and download blobs.
-For more information, refer to <a href="../Getting-Started/API-and-Access-Control.md">API and Access Control</a>.</p>
+For more information, refer to <a href="Skyporten/">Skyporten</a>.</p>
 <h3 id="accessing-the-payload-manager">Accessing the Payload Manager<a class="headerlink" href="#accessing-the-payload-manager" title="Permanent link">¶</a></h3>
 <p>Our storage account utilizes Microsoft's standard API, with support from microsoft libraries,
 making it easy to setup your custom applications for uploading and downloading blobs to the payload-manager storage accounts.
 For external users, Skyporten has to be used in conjunction.</p>
 <p>Listening to the payload-manager topic for your domain can be done with</p>
 <ol>
-<li><strong>Event Issuer:</strong> Use the <a href="../../Event-Issuer/User-Guides/How-to-start-using-the-event-issuer.md">Event Issuer</a> API to listen to the payload-manager topic.</li>
-<li><strong>Direct</strong> Or listen directly to the payload-manager topic. For this we need to grant read-access to your confluent user</li>
+<li><strong>Event Issuer:</strong> Use the <a href="../../Event-Issuer/">Event Issuer</a> API to listen to the payload-manager topic.</li>
 </ol>
-<h2 id="folder-access-control">Folder Access Control<a class="headerlink" href="#folder-access-control" title="Permanent link">¶</a></h2>
-<p>We have decided to enable Folder Access Control for the payload-manager storage accounts,
-which means that the owner of every container can control read / write / execute perissions for folders inside the container,
-read more about how this works and how to use it <a href="Folder-Access-Control.md">here</a></p>
-<p>If you have any questions or need further assistance, feel free to reach out!</p>
 <h2 id="api-management-dns">API Management DNS<a class="headerlink" href="#api-management-dns" title="Permanent link">¶</a></h2>
 <p>We have different API Management instances depending on the environment you will be using.</p>
 <table>
@@ -518,7 +502,7 @@ read more about how this works and how to use it <a href="Folder-Access-Control.
 <span class="md-icon" title="Last update">
 <svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"></path></svg>
 </span>
-<span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago" title="March 25, 2025 14:47:33"><span class="timeago" datetime="2025-03-25T14:47:33+00:00" locale="en"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date" title="March 25, 2025 14:47:33">2025-03-25</span>
+<span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago" title="March 26, 2025 11:55:41"><span class="timeago" datetime="2025-03-26T11:55:41+00:00" locale="en"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date" title="March 26, 2025 11:55:41">2025-03-26</span>
 </span>
 <span class="md-source-file__fact">
 <span class="md-icon" title="Created">
