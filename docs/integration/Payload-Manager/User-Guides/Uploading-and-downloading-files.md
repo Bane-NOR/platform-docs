@@ -35,7 +35,7 @@ Global Nuget Packages:
 
 ### Confluent Access
 
-[Event Issuer](test.com) will also needs access to the `cloud.<environment>.internal.payload-manager.<container-name>.claim-check.blob.v1`
+[Event Issuer](../../Event-Issuer/) will also needs access to the `cloud.<environment>.internal.payload-manager.<container-name>.claim-check.blob.v1`
 topic and the schemas registered to the topic. These topics are dependent on schemas and as such
 consumers need to use the schema serializer to be able to deserialize messages read from this topic.
 
@@ -83,4 +83,64 @@ app.MapGet("/", ([FromServices] BlobServiceClient blobServiceClient) =>
 
 app.Run();
 
+```
+
+## Upload with Skyporten
+
+```csharp
+using Azure.Identity;  
+using Azure.Storage.Blobs;  
+using dotnet_payload_manager_skyporten_poc;  
+  
+var maskinPortenOptions = new MaskinportenOptions()  
+{  
+    ClientId = "182410a3-0c27-4193-a89b-551be7e38389",   
+    Audience = "https://test.sky.maskinporten.no",  
+    KeyId = "712f59034deb24013f81",  
+    Url = new Uri("https://test.sky.maskinporten.no/token"),  
+};  
+  
+var httpClient = new HttpClient();  
+  
+var tokenGenerator = new TokenGenerator(maskinPortenOptions, httpClient);  
+
+// Returns bearer token from MaskinPorten  
+var header = await tokenGenerator.GetAuthenticationHeaderValueAsync();  
+  
+var tenantId = "6ee535f2-3064-4ac9-81d8-4ceb2ff790c6";  
+var clientId = "be433565-d4aa-4d0b-b588-1ac539047082";  
+var tokenPath = "/tmp/maskinporten-token.txt";  
+await File.WriteAllTextAsync(tokenPath, header.Parameter);  
+  
+var workLoadIdentityOption = new WorkloadIdentityCredentialOptions()  
+{  
+    TenantId = tenantId,  
+    ClientId = clientId,  
+    TokenFilePath = tokenPath  
+};  
+  
+var workLoadIdentity = new WorkloadIdentityCredential(workLoadIdentityOption);  
+
+
+// Blob interactions  
+var blobClientOptions = new BlobClientOptions();  
+  
+var blobServiceClient = new BlobServiceClient(  
+    new Uri("https://dev.api.apps.banenor.no/payload-manager/v1"), workLoadIdentity, blobClientOptions);  
+
+string containerName = "integration-dev";  
+  
+var containerClient = blobServiceClient.GetBlobContainerClient(containerName);  
+  
+// Create a local file in the ./data/ directory for uploading and downloading  
+string localPath = "data";  
+Directory.CreateDirectory(localPath);  
+string fileName = "quickstart" + Guid.NewGuid().ToString() + ".txt";  
+string localFilePath = Path.Combine(localPath, fileName);  
+  
+await File.WriteAllTextAsync(localFilePath, "Hello, World!");  
+  
+BlobClient blobClient = containerClient.GetBlobClient("v1/integration-dev/path/to/folder/" + fileName);  
+  
+await blobClient.UploadAsync(localFilePath, false);  
 ```
