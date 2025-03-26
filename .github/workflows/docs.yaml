@@ -36,7 +36,7 @@ jobs:
           poetry config virtualenvs.in-project true
           
       - name: Install Package Dependencies
-        run: poetry install --no-root
+        run: poetry install
 
       - name: Create version and Publish to gh-pages
         run: |
