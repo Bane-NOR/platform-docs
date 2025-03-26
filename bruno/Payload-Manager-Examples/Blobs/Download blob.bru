@@ -1,0 +1,23 @@
+meta {
+  name: Download blob
+  type: http
+  seq: 1
+}
+
+get {
+  url: {{hostUrl}}/{{containerName}}/{{blob}}
+  body: none
+  auth: bearer
+}
+
+headers {
+  x-ms-version: 2025-01-05
+}
+
+auth:bearer {
+  token:
+}
+
+vars:pre-request {
+  blob: path/to/test.json
+}

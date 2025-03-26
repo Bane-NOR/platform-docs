@@ -1,0 +1,23 @@
+meta {
+  name: Get blob metadata
+  type: http
+  seq: 3
+}
+
+head {
+  url: {{hostUrl}}/{{containerName}}/{{blob}}
+  body: none
+  auth: bearer
+}
+
+headers {
+  x-ms-version: 2025-01-05
+}
+
+auth:bearer {
+  token:
+}
+
+vars:pre-request {
+  blob: path/to/test.json
+}
