@@ -34,7 +34,7 @@ If your domain is already set up within the payload manager, we simply need to g
 ## Using the Payload Manager
 
 Once you have access to the appropriate domain within the storage account, you can use the API to upload and download blobs.
-For more information, refer to [API and Access Control](../Getting-Started/API-and-Access-Control.md).
+For more information, refer to [Skyporten](Skyporten.md).
 
 ### Accessing the Payload Manager
 
@@ -44,16 +44,7 @@ For external users, Skyporten has to be used in conjunction.
 
 Listening to the payload-manager topic for your domain can be done with
 
-1. **Event Issuer:** Use the [Event Issuer](../../Event-Issuer/User-Guides/How-to-start-using-the-event-issuer.md) API to listen to the payload-manager topic.
-1. **Direct** Or listen directly to the payload-manager topic. For this we need to grant read-access to your confluent user
-
-## Folder Access Control
-
-We have decided to enable Folder Access Control for the payload-manager storage accounts,
-which means that the owner of every container can control read / write / execute perissions for folders inside the container,
-read more about how this works and how to use it [here](Folder-Access-Control.md)
-
-If you have any questions or need further assistance, feel free to reach out!
+1. **Event Issuer:** Use the [Event Issuer](../../Event-Issuer/) API to listen to the payload-manager topic.
 
 ## API Management DNS
 

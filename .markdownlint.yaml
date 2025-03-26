@@ -62,9 +62,9 @@ MD013:
   # Number of characters
   line_length: -1
   # Number of characters for headings
-  heading_line_length: 80
+  heading_line_length: 160
   # Number of characters for code blocks
-  code_block_line_length: 80
+  code_block_line_length: 160
   # Include code blocks
   code_blocks: true
   # Include tables
@@ -102,9 +102,9 @@ MD022:
 MD023: true
 
 # MD024/no-duplicate-heading : Multiple headings with the same content : https://github.com/DavidAnson/markdownlint/blob/v0.37.4/doc/md024.md
-MD024:
+MD024: false
   # Only check sibling headings
-  siblings_only: false
+  # siblings_only: false
 
 # MD025/single-title/single-h1 : Multiple top-level headings in the same document : https://github.com/DavidAnson/markdownlint/blob/v0.37.4/doc/md025.md
 MD025:
