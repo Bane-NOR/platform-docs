@@ -11,6 +11,8 @@ tags:
 
 # Skyporten
 
+!!! warning "Under construction"
+
 Skyporten is a service from DigDir, created to allow Norwegian companies to share data between themselves using
 MaskinPorten as an external iDP token provider and exchanging said token with your own cloud environment such as
 GCP, Azure, or AWS. A detailed drawing from DigDir showcasing the flow can be seen from
