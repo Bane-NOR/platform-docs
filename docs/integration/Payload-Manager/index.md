@@ -11,7 +11,7 @@ Payload Manager is a service supported by the Integration Team for handling file
 
 Services `should` use the Confluent Platform for async communications, but as a way of working towards this goal, the Payload Manager can be used as a temporary solution. There might also be cases where it is not possible to use Kafka as the main way of transferring data, for example, if large pictures or video files need to be moved. For these cases, the Payload Manager can be used as the main solution for moving data.
 
-[Start using the payload manager](/Integration-platform/Payload-Manager/Getting-Started/Start-using-the-payload-manager)
+[Start using the payload manager](/integration/Payload-Manager/User-Guides/Uploading-and-downloading-files/)
 
 ## General Overview
 
