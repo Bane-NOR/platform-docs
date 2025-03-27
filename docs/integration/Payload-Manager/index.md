@@ -19,8 +19,6 @@ A general overview of the `claim check` pattern in Bane NOR:
 
 ![claim-check-overview](/../../img/Payload-Manager/claim-check-pattern.drawio.png)
 
-For more specific documentation with more detailed drawings, please check out our [Architecture diagram](/Integration-platform/Payload-Manager/Architecture).
-
 ## Rollout phases
 
 The development of the payload manager is split into 3 phases, where each phase adds more functionality. The order of the list showcases the priority of implementation:

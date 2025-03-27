@@ -25,17 +25,17 @@ Once logged in to the developer portal for the first time, you will be visible w
 
 ## Using Event Issuer
 
-As mentioned in the getting access chapter of this document, the Event Issuer is available through an API present in each environment instance of APIM meaning that all available endpoints and their descriptions can be seen there. The API documentation is also available on GitHub using Redocly rendering which can be easier to read. The document can be seen here: [GitHub version of API](https://bane-nor.github.io/event-issuer/apis/v1/)
+As mentioned in the getting access chapter of this document, the Event Issuer is available through an API present in each environment instance of APIM meaning that all available endpoints and their descriptions can be seen there. The API documentation is also available on GitHub using Redocly rendering which can be easier to read. The document can be seen here: [GitHub version of API](/integration/Event-Issuer/apis/v1/)
 
 This means that if you prefer, you can simply test sending API requests using for example [Bruno](https://www.usebruno.com/) based on the API documentation. Otherwise, here is a showcase of some Bruno requests that can help you get started with links to relevant repositories.
 
 ### Starting your first subscription
 
-Once your user has gotten access to the event-issuer API, and a tenant for your organization has been created with the correct access policies, you can create your first subscription. To create a subscription, you must use the **Create Subscription** method towards the event-issuers subscription Endpoint. The API definition for this can be seen on the available API found in our GitHub documentation here: [Create Subscription Method](https://bane-nor.github.io/event-issuer/apis/v1/redoc-ebfe90c5.html#tag/Subscriptions/operation/createSubscription)
+Once your user has gotten access to the event-issuer API, and a tenant for your organization has been created with the correct access policies, you can create your first subscription. To create a subscription, you must use the **Create Subscription** method towards the event-issuers subscription Endpoint. The API definition for this can be seen on the available API found in our GitHub documentation here: [Create Subscription Method](/integration/Event-Issuer/apis/v1/)
 
 #### Example Bruno Request
 
-An example request for this method can be found in our [event issuer repository](https://github.com/Bane-NOR/event-issuer?tab=readme-ov-file) in our bruno folder or seen in the figure below using the [Bruno](https://www.usebruno.com/) API client:
+An example request for this method can be found in our [event issuer repository](https://github.com/Bane-NOR/platform-docs) in our bruno folder or seen in the figure below using the [Bruno](https://www.usebruno.com/) API client:
 
 ##### Header
 
@@ -44,7 +44,7 @@ The only required header per writing is the API key for the event-issuer API fou
 
 ##### Body
 
-The content of the request are just for examples. For more concrete information on all subscription body options. Check out the [subscriptions page](/docs/user-guides/subscriptions.md)
+The content of the request are just for examples. For more concrete information on all subscription body options. Check out the [subscriptions page](/integration/Event-Issuer/User-Guides/subscriptions/)
  ![image.png](../img/getting-started/Create-Subscription-Bruno-body.png)
 
 ### Producing your first message

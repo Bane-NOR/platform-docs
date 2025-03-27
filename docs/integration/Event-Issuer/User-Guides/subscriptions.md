@@ -1,6 +1,6 @@
 # Subscriptions
 
-(For concrete examples, check out our [bruno collection](https://github.com/Bane-NOR/event-issuer/tree/main/bruno))
+(For concrete examples, check out our [bruno collection](https://github.com/Bane-NOR/platform-docs/tree/main/bruno/Event-Issuer-Examples))
 
 Subscriptions are the main mechanism for getting real-time events from the Bane NOR event backbone. The subscription is a reference to an application that wants events to be sent to a webhook endpoint. The subscriber can configure the authentication towards the endpoint in addition to an API key if that is needed.
 
