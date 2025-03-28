@@ -64,7 +64,7 @@ The following IdPs are supported for fetching OAuth2.0 tokens:
 
 The following diagram shows the system context for communication with an IdP.
 
-![system-context](../img/subscriptions/identity-provider.drawio.svg)
+![system-context](/img/Event-Issuer/subscriptions/identity-provider.drawio.svg)
 
 #### Maskinporten
 
