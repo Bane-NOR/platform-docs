@@ -2,7 +2,7 @@
 
 The goal of an Event Issuer is to provide an infrastructure to abstract event delivery via a secured RESTful API to external users and systems such as SaaS. This allows external users to maintain service boundaries, and not directly depend on any specific message broker technology. The event issuer will have the possibility to consume events from Bane NOR and produce new events.
 
-![client-integration](/img/Event-Issuer/client-integration.drawio.svg)
+![client-integration](/platform-docs/img/Event-Issuer/client-integration.drawio.svg)
 
 ## Consumer
 

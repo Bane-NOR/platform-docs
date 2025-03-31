@@ -3,8 +3,8 @@ site_description: Platform Documentation
 
 theme:
   name: material
-  logo: img/baneNOR-logo.svg
-  favicon: img/baneNOR-favicon.png # located here: https://www.banenor.no/Resources/Favicon/favicon-32x32.png
+  logo: /platform-docs/img/baneNOR-logo.svg
+  favicon: /platform-docs/img/baneNOR-favicon.png # located here: https://www.banenor.no/Resources/Favicon/favicon-32x32.png
   include_search_page: false
   search_index_only: true
   language: en

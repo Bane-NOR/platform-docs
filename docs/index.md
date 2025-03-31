@@ -1,7 +1,7 @@
 # Bane NOR External Documentation
 
 <div style="display: flex; align-items: center; height: 100px;">
-    <img src="/img/platforms_round.png" alt="Image" width="100" height="100" style="margin-right: 10px;">
+    <img src="/platform-docs/img/platforms_round.png" alt="Image" width="100" height="100" style="margin-right: 10px;">
     <h1 style="margin: 0;">Welcome to the Portal!</h1>
 </div>
 

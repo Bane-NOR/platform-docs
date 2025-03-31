@@ -40,12 +40,12 @@ An example request for this method can be found in our [event issuer repository]
 ##### Header
 
 The only required header per writing is the API key for the event-issuer API found on your account in the developer portal
-![image.png](/img/Event-Issuer/getting-started/Create-Subscription-Bruno-header.png)
+![image.png](/platform-docs/img/Event-Issuer/getting-started/Create-Subscription-Bruno-header.png)
 
 ##### Body
 
 The content of the request are just for examples. For more concrete information on all subscription body options. Check out the [subscriptions page](/integration/Event-Issuer/User-Guides/subscriptions/)
- ![image.png](/img/Event-Issuer/getting-started/Create-Subscription-Bruno-body.png)
+ ![image.png](/platform-docs/img/Event-Issuer/getting-started/Create-Subscription-Bruno-body.png)
 
 ### Producing your first message
 
@@ -58,9 +58,9 @@ An example request for this method can be found in our [event issuer repository]
 ##### Header
 
 The only required header per writing is the API key for the event-issuer API found on your account in the developer portal
-![image.png](/img/Event-Issuer/getting-started/Produce-Event-Bruno-header.png)
+![image.png](/platform-docs/img/Event-Issuer/getting-started/Produce-Event-Bruno-header.png)
 
 ##### Body
 
 The content of the request are just for examples
-![image.png](/img/Event-Issuer/getting-started/Produce-Event-Bruno-body.png)
+![image.png](/platform-docs/img/Event-Issuer/getting-started/Produce-Event-Bruno-body.png)
