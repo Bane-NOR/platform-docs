@@ -18,13 +18,3 @@ Services `should` use the Confluent Platform for async communications, but as a 
 A general overview of the `claim check` pattern in Bane NOR:
 
 ![claim-check-overview](/platform-docs/img/Payload-Manager/claim-check-pattern.drawio.png)
-
-## Rollout phases
-
-The development of the payload manager is split into 3 phases, where each phase adds more functionality. The order of the list showcases the priority of implementation:
-
-| Phase               | Implemented        |
-| --------------------| :----------------: |
-| Internal file share | :white_check_mark: |
-| External file share |                    |
-| Transfer between KV IKT and Enterprise IT | |
