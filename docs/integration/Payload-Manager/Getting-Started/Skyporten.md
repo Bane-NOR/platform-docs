@@ -33,6 +33,10 @@ tenant will also be available for your entire company, you do not get a team spe
 The integration platform also hosts an API in both MaskinPorten environments which you will be given access to 
 so you can fetch an identity token which you will use in your token exchange.
 
+### TLDR
+- Managed identity with Federated credential in Bane NOR tenant
+- API in maskinporten scoped to correct resource
+
 ## What must you do yourself
 To be able to get the token from MaskinPorten, you have to create your own self-service integration through digdir: https://samarbeid.digdir.no/
 This self-service integration has to provide access to the scope which is the API we provide. 
@@ -45,3 +49,8 @@ Once you have your own integration, you have to write your own logic for fetchin
 might be of assistance: https://docs.digdir.no/docs/Maskinporten/maskinporten_guide_apikonsument
 
 Lastly, you have to implement code to interact with our storage accounts. We have user examples in Dotnet to achieve this showcased in our guide: [Uploading and downloading files](/docs/integration/Payload-Manager/User-Guides/Uploading-and-downloading-files.md)
+
+### TLDR
+- Create your own self service integration
+- Create your own logic for fetching maskinporten token
+- Create your own logic for using the storage account (see user-guide for help)
