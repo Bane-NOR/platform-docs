@@ -48,7 +48,7 @@ We will provide your organization with access to the API as part of onboarding.
 Once you have your own integration, you have to write your own logic for fetching a maskinPorten token. Some code examples from DigDir
 might be of assistance: https://docs.digdir.no/docs/Maskinporten/maskinporten_guide_apikonsument
 
-Lastly, you have to implement code to interact with our storage accounts. We have user examples in Dotnet to achieve this showcased in our guide: [Uploading and downloading files](/docs/integration/Payload-Manager/User-Guides/Uploading-and-downloading-files.md)
+Lastly, you have to implement code to interact with our storage accounts. We have user examples in Dotnet to achieve this showcased in our guide: [Uploading files with skyporten](/docs/integration/Payload-Manager/User-Guides/Uploading-files-with-skyporten.md)
 
 ### TLDR
 - Create your own self service integration

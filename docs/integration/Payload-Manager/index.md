@@ -11,10 +11,12 @@ Payload Manager is a service supported by the Integration Team for handling file
 
 Services `should` use the Confluent Platform for async communications, but as a way of working towards this goal, the Payload Manager can be used as a temporary solution. There might also be cases where it is not possible to use Kafka as the main way of transferring data, for example, if large pictures or video files need to be moved. For these cases, the Payload Manager can be used as the main solution for moving data.
 
-[Start using the payload manager](/integration/Payload-Manager/User-Guides/Uploading-and-downloading-files/)
-
 ## General Overview
 
 A general overview of the `claim check` pattern in Bane NOR:
 
 ![claim-check-overview](/platform-docs/img/Payload-Manager/claim-check-pattern.drawio.png)
+
+## Get started
+To get started with the payload manager, check out our getting started guide:
+[Getting started](/docs/integration/Payload-Manager/Getting-Started/index.md)

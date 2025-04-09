@@ -69,7 +69,7 @@ This Audience header **MUST** be scoped to the external storage account you are 
 This means that the audience **MUST** contain:
 https://&lt;storage-account-name&gt;.blob.core.windows.net
 
-For concrete examples on how to achieve this, please to go our user guide: [Uploading and downloading files](/docs/integration/Payload-Manager/User-Guides/Uploading-and-downloading-files.md)
+For concrete examples on how to achieve this, please to go our user guide: [Uploading files with skyporten](/docs/integration/Payload-Manager/User-Guides/Uploading-files-with-skyporten.md)
 
 ## Other relevant info
 
