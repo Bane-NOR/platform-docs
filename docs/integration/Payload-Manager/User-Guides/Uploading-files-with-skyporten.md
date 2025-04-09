@@ -16,7 +16,7 @@ The following guide will show you how you can start uploading or downloading fil
 
 ## Information
 
-- The blob store (storage container) is accessible from API Management which is just a proxy in front of a Storage Account. 
+- The blob store (storage container) is accessible from API Management which is just a proxy in front of a Storage Account.
 
 - To be able to upload and download files, your service needs an Entra identity with correct access to the blob store. Check out our guide on how to receive this here: [Skyporten](/integration/Payload-Manager/Getting-Started/Skyporten)
 

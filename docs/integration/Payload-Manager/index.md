@@ -18,5 +18,6 @@ A general overview of the `claim check` pattern in Bane NOR:
 ![claim-check-overview](/platform-docs/img/Payload-Manager/claim-check-pattern.drawio.png)
 
 ## Get started
+
 To get started with the payload manager, check out our getting started guide:
 [Getting started](/docs/integration/Payload-Manager/Getting-Started/index.md)
