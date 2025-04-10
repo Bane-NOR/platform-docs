@@ -354,7 +354,7 @@
 <input class="md-nav__toggle md-toggle" id="__nav_1_2_3" type="checkbox"/>
 <label class="md-nav__link" for="__nav_1_2_3" id="__nav_1_2_3_label" tabindex="0">
 <span class="md-ellipsis">
-    User Guides
+    Apis
     
   </span>
 <span class="md-nav__icon md-icon"></span>
@@ -362,11 +362,37 @@
 <nav aria-expanded="false" aria-labelledby="__nav_1_2_3_label" class="md-nav" data-md-level="3">
 <label class="md-nav__title" for="__nav_1_2_3">
 <span class="md-nav__icon md-icon"></span>
+            Apis
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../apis/v1/">
+<span class="md-ellipsis">
+    Payload Manager API spec
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_1_2_4" type="checkbox"/>
+<label class="md-nav__link" for="__nav_1_2_4" id="__nav_1_2_4_label" tabindex="0">
+<span class="md-ellipsis">
+    User Guides
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_1_2_4_label" class="md-nav" data-md-level="3">
+<label class="md-nav__title" for="__nav_1_2_4">
+<span class="md-nav__icon md-icon"></span>
             User Guides
           </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="../User-Guides/Uploading-and-downloading-files/">
+<a class="md-nav__link" href="../User-Guides/Uploading-files-with-skyporten/">
 <span class="md-ellipsis">
     Uploading and Downloading files
     
@@ -404,22 +430,11 @@
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#domain-for-storage-account-container">
+<a class="md-nav__link" href="#payload-manager-storage-account-structure">
 <span class="md-ellipsis">
-      Domain for Storage Account Container
+      Payload Manager Storage Account Structure
     </span>
 </a>
-<nav aria-label="Domain for Storage Account Container" class="md-nav">
-<ul class="md-nav__list">
-<li class="md-nav__item">
-<a class="md-nav__link" href="#existing-domains">
-<span class="md-ellipsis">
-      Existing Domains
-    </span>
-</a>
-</li>
-</ul>
-</nav>
 </li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="#using-the-payload-manager">
@@ -427,12 +442,19 @@
       Using the Payload Manager
     </span>
 </a>
-<nav aria-label="Using the Payload Manager" class="md-nav">
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#using-the-api">
+<span class="md-ellipsis">
+      Using the API
+    </span>
+</a>
+<nav aria-label="Using the API" class="md-nav">
 <ul class="md-nav__list">
 <li class="md-nav__item">
-<a class="md-nav__link" href="#accessing-the-payload-manager">
+<a class="md-nav__link" href="#reaching-the-storage-account">
 <span class="md-ellipsis">
-      Accessing the Payload Manager
+      Reaching the storage account
     </span>
 </a>
 </li>
@@ -440,11 +462,22 @@
 </nav>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#api-management-dns">
+<a class="md-nav__link" href="#other-relevant-info">
 <span class="md-ellipsis">
-      API Management DNS
+      Other relevant info
     </span>
 </a>
+<nav aria-label="Other relevant info" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#consuming-payload-manager-events">
+<span class="md-ellipsis">
+      Consuming Payload Manager Events
+    </span>
+</a>
+</li>
+</ul>
+</nav>
 </li>
 </ul>
 </nav>
@@ -461,87 +494,88 @@
 <span class="md-tag">storage</span>
 </nav>
 <h1 id="getting-started">Getting Started<a class="headerlink" href="#getting-started" title="Permanent link">¶</a></h1>
-<p>The goal of this guide is to give a quick introduction to how one can get access to and start using the Payload Manager in BaneNOR.</p>
+<p>The goal of this guide is to give a quick introduction to how one can get access to and start using the Payload Manager in Bane NOR.</p>
 <div class="toc">
 <ul>
 <li><a href="#getting-started">Getting Started</a><ul>
 <li><a href="#onboarding">Onboarding</a></li>
-<li><a href="#domain-for-storage-account-container">Domain for Storage Account Container</a><ul>
-<li><a href="#existing-domains">Existing Domains</a></li>
+<li><a href="#payload-manager-storage-account-structure">Payload Manager Storage Account Structure</a></li>
+<li><a href="#using-the-payload-manager">Using the Payload Manager</a></li>
+<li><a href="#using-the-api">Using the API</a><ul>
+<li><a href="#reaching-the-storage-account">Reaching the storage account</a></li>
 </ul>
 </li>
-<li><a href="#using-the-payload-manager">Using the Payload Manager</a><ul>
-<li><a href="#accessing-the-payload-manager">Accessing the Payload Manager</a></li>
+<li><a href="#other-relevant-info">Other relevant info</a><ul>
+<li><a href="#consuming-payload-manager-events">Consuming Payload Manager Events</a></li>
 </ul>
 </li>
-<li><a href="#api-management-dns">API Management DNS</a></li>
 </ul>
 </li>
 </ul>
 </div>
+<div class="admonition info">
+<p class="admonition-title">Info</p>
+<p>The Payload Manager solution is only available to norwegian companies as per writing as the Authentication and Authorization
+mechanism relies on <strong>Skyporten</strong>.</p>
+</div>
 <h2 id="onboarding">Onboarding<a class="headerlink" href="#onboarding" title="Permanent link">¶</a></h2>
-<p>The first step in getting access to the payload-manager service is an onboarding meeting with the integration platform.
-Here the goal is to map out the thought-out use case/cases for your team and why the Payload Mangager would be a relevant solution.
-To start this onboarding process, you should have talked with your BaneNOR collaborators who should take care of the onboarding.</p>
-<p>If you are already onboarded and have been allowed to use the Payload Manager Service, the first step can be ignored.</p>
-<h2 id="domain-for-storage-account-container">Domain for Storage Account Container<a class="headerlink" href="#domain-for-storage-account-container" title="Permanent link">¶</a></h2>
-<p>Our storage accounts used for the payload manager are divided into containers based on separate domains. Each domain has its own Kafka topic.</p>
-<h3 id="existing-domains">Existing Domains<a class="headerlink" href="#existing-domains" title="Permanent link">¶</a></h3>
-<p>If your domain is already set up within the payload manager, we simply need to grant you the necessary permissions to start using it.</p>
+<p>The first step in getting access to the payload-manager service is contacting the integration platform team. To contact us, please send us an e-mail
+at: <a href="mailto:integrasjonsteamet@banenor.no">integrasjonsteamet@banenor.no</a>. We aim to respond within a day of receiving an e-mail.</p>
+<p>In the e-mail, please detail:
+- Why you would like to use the solution
+- Who or what systems in Bane NOR you want to interact with
+- How we should contact you for further details and questions</p>
+<h2 id="payload-manager-storage-account-structure">Payload Manager Storage Account Structure<a class="headerlink" href="#payload-manager-storage-account-structure" title="Permanent link">¶</a></h2>
+<p>The payload manager utilizes a storage account divided up into multiple containers.
+Each container represents a domain within Bane NOR meaning that the container you should use
+is based on the data that you will be producing. To decide on a container, please consult with the team you are
+communicating with within Bane NOR and the integration team if a new container is required.</p>
+<p>The storage accounts also employ hierarchical namespaces meaning that they employ ACL (Access control lists).
+This means that each folder in a container has an extra layer of security requiring both RBAC and ACL to be allowed to read/write.</p>
 <h2 id="using-the-payload-manager">Using the Payload Manager<a class="headerlink" href="#using-the-payload-manager" title="Permanent link">¶</a></h2>
-<p>Once you have access to the appropriate domain within the storage account, you can use the API to upload and download blobs.
-For more information, refer to <a href="Skyporten/">Skyporten</a>.</p>
-<h3 id="accessing-the-payload-manager">Accessing the Payload Manager<a class="headerlink" href="#accessing-the-payload-manager" title="Permanent link">¶</a></h3>
-<p>Our storage account utilizes Microsoft's standard API, with support from microsoft libraries,
-making it easy to setup your custom applications for uploading and downloading blobs to the payload-manager storage accounts.
-For external users, Skyporten has to be used in conjunction.</p>
-<p>Listening to the payload-manager topic for your domain can be done with</p>
-<ol>
-<li><strong>Event Issuer:</strong> Use the <a href="../../Event-Issuer/">Event Issuer</a> API to listen to the payload-manager topic.</li>
-</ol>
-<h2 id="api-management-dns">API Management DNS<a class="headerlink" href="#api-management-dns" title="Permanent link">¶</a></h2>
-<p>We have different API Management instances depending on the environment you will be using.</p>
-<table>
-<thead>
-<tr>
-<th>Environment</th>
-<th>DNS</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Dev</td>
-<td><a href="https://dev.api.apps.banenor.no">https://dev.api.apps.banenor.no</a></td>
-</tr>
-<tr>
-<td>Test/Staging</td>
-<td><a href="https://test.api.apps.banenor.no">https://test.api.apps.banenor.no</a></td>
-</tr>
-<tr>
-<td>Prod</td>
-<td><a href="https://api.banenor.no">https://api.banenor.no</a></td>
-</tr>
-</tbody>
-</table>
-<!-- <div class="next-step-card-container">
-    <div class="next-step-card">
-        <h3>Next Step: Get familiar with Payload Manager</h3>
-        <p><a href="/integration/Integration-platform/Payload-Manager/Getting-Started/API-and-Access-Control/">&#8594; Journey: Payload Manager security.</a></p>
-        <p><a href="/integration/Integration-platform/Payload-Manager/User-Guides/How-to-Upload-and-Download-files/">&#8594; How to upload files.</a></p>
-    </div>
-</div> -->
+<p>Once it has been decided that you will start using the payload manager, and it has been decided which container you should use,
+you can start looking into how to produce/consume files. For external parties such as yourself, Bane NOR has implemented the use
+of <a href="Skyporten/">Skyporten</a> for Authentication and Authorization purposes. The required resources in the Bane NOR's tenant are
+provided by the integration team on request, and will be handled as part of the onboarding procedure. For more information on
+how Bane NOR utilizes Skyporten to allow external parties access to the storage accounts, please refer to: <a href="Skyporten/">Skyporten</a>.</p>
+<h2 id="using-the-api">Using the API<a class="headerlink" href="#using-the-api" title="Permanent link">¶</a></h2>
+<p>As mentioned, the Payload Manager exposes two storage accounts per environment through an API found in Bane NOR's APIM instance.
+The API uses Microsoft's own blob storage API meaning that all API methods that work directly against a regular storage account,
+will also work with the API we present, given that you have the correct RBAC and ACL access.</p>
+<p>To check out the API, please go to our page here:
+- <a href="/docs/integration/Payload-Manager/apis/v1">Payload Manager API</a></p>
+<p>The API can also be found in Bane NOR's development portals given you have the correct access, found on these two URL's:
+- Staging: <a href="https://test.api-portal.apps.banenor.no/">https://test.api-portal.apps.banenor.no/</a>
+- Production: <a href="https://api-portal.banenor.no/">https://api-portal.banenor.no/</a></p>
+<h3 id="reaching-the-storage-account">Reaching the storage account<a class="headerlink" href="#reaching-the-storage-account" title="Permanent link">¶</a></h3>
+<p>As mentioned, the API provided by Bane NOR exposes multiple storage accounts through the same api (two accounts per environment). For the API
+to be able to select the correct backend storage account, it uses an APIM policy which both validates the incoming JWT token and checks specifically the audience header
+in the JWT token to determine which backend to use.</p>
+<p>This Audience header <strong>MUST</strong> be scoped to the external storage account you are trying to reach. The accounts we expose are:
+| Environment         | Name                  |
+| --------------------| :-------------------- |
+| Development         | bnplmextnwestdev      |
+| Staging             | bnplmextnwesttest     |
+| Production          | bnplmextnwestprod     |</p>
+<p>This means that the audience <strong>MUST</strong> contain:
+https://&lt;storage-account-name&gt;.blob.core.windows.net</p>
+<p>For concrete examples on how to achieve this, please to go our user guide: <a href="/docs/integration/Payload-Manager/User-Guides/Uploading-files-with-skyporten.md">Uploading files with skyporten</a></p>
+<h2 id="other-relevant-info">Other relevant info<a class="headerlink" href="#other-relevant-info" title="Permanent link">¶</a></h2>
+<h3 id="consuming-payload-manager-events">Consuming Payload Manager Events<a class="headerlink" href="#consuming-payload-manager-events" title="Permanent link">¶</a></h3>
+<p>The Payload Manager presents a claim-check solution which produces messages to kafka. In the case that you have to consume information, the event-issuer can be utilized.</p>
+<p><strong>Event Issuer:</strong> Use the <a href="../../Event-Issuer/">Event Issuer</a> API to listen to the payload-manager topic.</p>
 <aside class="md-source-file">
 <span class="md-source-file__fact">
 <span class="md-icon" title="Last update">
 <svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"></path></svg>
 </span>
-<span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago" title="March 31, 2025 10:08:40"><span class="timeago" datetime="2025-03-31T10:08:40+00:00" locale="en"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date" title="March 31, 2025 10:08:40">2025-03-31</span>
+<span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago" title="April 10, 2025 07:56:22"><span class="timeago" datetime="2025-04-10T07:56:22+00:00" locale="en"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date" title="April 10, 2025 07:56:22">2025-04-10</span>
 </span>
 <span class="md-source-file__fact">
 <span class="md-icon" title="Created">
 <svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M14.47 15.08 11 13V7h1.5v5.25l3.08 1.83c-.41.28-.79.62-1.11 1m-1.39 4.84c-.36.05-.71.08-1.08.08-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8c0 .37-.03.72-.08 1.08.69.1 1.33.32 1.92.64.1-.56.16-1.13.16-1.72 0-5.5-4.5-10-10-10S2 6.5 2 12s4.47 10 10 10c.59 0 1.16-.06 1.72-.16-.32-.59-.54-1.23-.64-1.92M18 15v3h-3v2h3v3h2v-3h3v-2h-3v-3z"></path></svg>
 </span>
-<span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago" title="March 31, 2025 10:08:40"><span class="timeago" datetime="2025-03-31T10:08:40+00:00" locale="en"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date" title="March 31, 2025 10:08:40">2025-03-31</span>
+<span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago" title="April 10, 2025 07:56:22"><span class="timeago" datetime="2025-04-10T07:56:22+00:00" locale="en"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date" title="April 10, 2025 07:56:22">2025-04-10</span>
 </span>
 </aside>
 </article>
