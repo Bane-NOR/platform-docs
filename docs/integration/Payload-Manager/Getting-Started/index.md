@@ -51,7 +51,10 @@ As mentioned, the Payload Manager exposes two storage accounts per environment t
 The API uses Microsoft's own blob storage API meaning that all API methods that work directly against a regular storage account,
 will also work with the API we present, given that you have the correct RBAC and ACL access.
 
-The API can be found in Bane NOR's development portals, found on these two URL's:
+To check out the API, please go to our page here:
+- [Payload Manager API](/docs/integration/Payload-Manager/apis/v1)
+
+The API can also be found in Bane NOR's development portals given you have the correct access, found on these two URL's:
 - Staging: <https://test.api-portal.apps.banenor.no/>
 - Production: <https://api-portal.banenor.no/>
 
