@@ -11,7 +11,7 @@ tags:
 
 # Skyporten
 
-[[_TOC_]]
+[TOC]
 
 Skyporten is a service from DigDir, created to allow Norwegian companies to share data between themselves using
 MaskinPorten as an external iDP token provider and exchanging said token with your own cloud environment such as
@@ -19,7 +19,7 @@ GCP, Azure, or AWS. A detailed drawing from DigDir showcasing the flow can be se
 [DigDirs documentation](https://docs.digdir.no/docs/Maskinporten/maskinporten_skyporten).
 
 The payload manager solution utilizes Skyporten for this purpose as an external third party token provider,
-which can be exchanged for an Entra Id token within Bane NOR's Azure Tenant, where the Entra-id token can
+which can be exchanged for an Entra-Id token within Bane NOR's Azure Tenant, where the Entra-id token can
 be used to authenticate against the required storage account.
 
 ## What does the Integration Platform provide
@@ -41,9 +41,10 @@ so you can fetch an identity token which you will use in your token exchange.
 
 ## What must you do yourself
 
-To be able to get the token from MaskinPorten, you have to create your own self-service integration through digdir: <https://samarbeid.digdir.no/>
+To be able to get the token from MaskinPorten, you have to create your own self-service integration through DigDir: <https://samarbeid.digdir.no/>
 This self-service integration has to provide access to the scope which is the API we provide.
 The API is named:
+
 - **banenor:payloadmanager.storage** (In both test and prod)
 
 We will provide your organization with access to the API as part of onboarding.
@@ -51,7 +52,7 @@ We will provide your organization with access to the API as part of onboarding.
 Once you have your own integration, you have to write your own logic for fetching a maskinPorten token. Some code examples from DigDir
 might be of assistance: <https://docs.digdir.no/docs/Maskinporten/maskinporten_guide_apikonsument>
 
-Lastly, you have to implement code to interact with our storage accounts. We have user examples in Dotnet to achieve this showcased in our guide: [Uploading files with skyporten](/docs/integration/Payload-Manager/User-Guides/Uploading-files-with-skyporten.md)
+Lastly, you have to implement code to interact with our storage accounts. We have user examples in Dotnet to achieve this showcased in our guide: [Uploading files with skyporten](../User-Guides/Uploading-files-with-skyporten.md)
 
 ### TLDR
 

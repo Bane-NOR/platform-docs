@@ -17,6 +17,7 @@ If you are already onboarded and have been allowed to use the Event Issuer Servi
 After permission has been given to use the Event Issuer service, the next step is to get API access to the event-issuer API which is available through the integration team API Management (APIM) instance. For the integration team to be able to provide you with API keys you first have to **at least once** log into the APIM developer portal relevant to the environment you want to use the Event Issuer in. Here is a list showcasing the possible environments:
 
 - For the staging environment: [APIM Portal Staging](https://test.api-portal.apps.banenor.no )
+
 - For the production environment: [APIM Portal Production](https://api-portal.banenor.no/)
 
 The staging environment can be used to consume data from dev topics. The reason for this is that our dev instance will not necessarily be stable for public use and as such we will serve both dev and staging with the staging event issuer for those that need to work with their own development.
@@ -25,13 +26,13 @@ Once logged in to the developer portal for the first time, you will be visible w
 
 ## Using Event Issuer
 
-As mentioned in the getting access chapter of this document, the Event Issuer is available through an API present in each environment instance of APIM meaning that all available endpoints and their descriptions can be seen there. The API documentation is also available on GitHub using Redocly rendering which can be easier to read. The document can be seen here: [GitHub version of API](/docs/integration/Event-Issuer/apis/v1)
+As mentioned in the getting access chapter of this document, the Event Issuer is available through an API present in each environment instance of APIM meaning that all available endpoints and their descriptions can be seen there. The API documentation is also available on GitHub using Redocly rendering which can be easier to read. The document can be seen here: [GitHub version of API](../../apis/v1/)
 
 This means that if you prefer, you can simply test sending API requests using for example [Bruno](https://www.usebruno.com/) based on the API documentation. Otherwise, here is a showcase of some Bruno requests that can help you get started with links to relevant repositories.
 
 ### Starting your first subscription
 
-Once your user has gotten access to the event-issuer API, and a tenant for your organization has been created with the correct access policies, you can create your first subscription. To create a subscription, you must use the **Create Subscription** method towards the event-issuers subscription Endpoint. The API definition for this can be seen on the available API found in our GitHub documentation here: [Create Subscription Method](/docs/integration/Event-Issuer/apis/v1)
+Once your user has gotten access to the event-issuer API, and a tenant for your organization has been created with the correct access policies, you can create your first subscription. To create a subscription, you must use the **Create Subscription** method towards the event-issuers subscription Endpoint. The API definition for this can be seen on the available API found in our GitHub documentation here: [Create Subscription Method](https://bane-nor.github.io/platform-docs/integration/Event-Issuer/apis/v1/redoc-fcdec0ce.html#tag/Subscriptions/operation/createSubscription)
 
 #### Example Bruno Request
 
@@ -40,16 +41,16 @@ An example request for this method can be found in our [event issuer repository]
 ##### Header
 
 The only required header per writing is the API key for the event-issuer API found on your account in the developer portal
-![image.png](/platform-docs/img/Event-Issuer/getting-started/Create-Subscription-Bruno-header.png)
+![image.png](../../../img/Event-Issuer/getting-started/Create-Subscription-Bruno-header.png)
 
 ##### Body
 
-The content of the request are just for examples. For more concrete information on all subscription body options. Check out the [subscriptions page](/docs/integration/Event-Issuer/User-Guides/subscriptions.md)
- ![image.png](/docs/img/Event-Issuer/getting-started/Create-Subscription-Bruno-body.png)
+The content of the request are just for examples. For more concrete information on all subscription body options. Check out the [subscriptions page](../User-Guides/subscriptions.md)
+ ![image.png](../../../img/Event-Issuer/getting-started/Create-Subscription-Bruno-body.png)
 
 ### Producing your first message
 
-Once your user has gotten access to the event-issuer API, and a tenant for your organization has been created with the correct access policies, you can produce your first message towards the Bane NOR Event Backbone which as per writing is Confluent Kafka. To produce a message, you must use either the **Produce Cloud Event** method or **Produce batch of Cloud Events**  method found under the produce endpoint. The API definition for this can be seen on the available API found in our GitHub documentation here: [Produce Cloud Event Method](https://bane-nor.github.io/event-issuer/apis/v1/redoc-ebfe90c5.html#tag/Produce/operation/produce)
+Once your user has gotten access to the event-issuer API, and a tenant for your organization has been created with the correct access policies, you can produce your first message towards the Bane NOR Event Backbone which as per writing is Confluent Kafka. To produce a message, you must use either the **Produce Cloud Event** method or **Produce batch of Cloud Events**  method found under the produce endpoint. The API definition for this can be seen on the available API found in our GitHub documentation here: [Produce Cloud Event Method](https://bane-nor.github.io/platform-docs/integration/Event-Issuer/apis/v1/redoc-fcdec0ce.html#tag/Produce/operation/produce)
 
 #### Example Bruno Request
 
@@ -58,9 +59,9 @@ An example request for this method can be found in our [event issuer repository]
 ##### Header
 
 The only required header per writing is the API key for the event-issuer API found on your account in the developer portal
-![image.png](/docs/img/Event-Issuer/getting-started/Produce-Event-Bruno-header.png)
+![image.png](../../../img/Event-Issuer/getting-started/Produce-Event-Bruno-header.png)
 
 ##### Body
 
 The content of the request are just for examples
-![image.png](/docs/img/Event-Issuer/getting-started/Produce-Event-Bruno-body.png)
+![image.png](../../../img/Event-Issuer/getting-started/Produce-Event-Bruno-body.png)
