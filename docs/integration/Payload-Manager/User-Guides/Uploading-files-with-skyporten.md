@@ -45,7 +45,7 @@ using Azure.Storage.Blobs;
 // This method uses private/public key pair, can also be done with certificates
 var maskinPortenOptions = new MaskinportenOptions()  
 {  
-    ClientId = "182410a3-0c27-4193-a89b-551be7e38389",   
+    ClientId = "id-of-your-self-service-integration",   
     Audience = "https://test.sky.maskinporten.no", // Prod: "https://sky.maskinporten.no"  
     KeyId = "id-for-your-key",  
     Url = new Uri("https://test.sky.maskinporten.no/token"),  // Prod: "https://sky.maskinporten.no/token"   
