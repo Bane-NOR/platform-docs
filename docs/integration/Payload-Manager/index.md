@@ -15,7 +15,7 @@ Services `should` use the Confluent Platform for async communications, but as a 
 
 A general overview of the `claim check` pattern in Bane NOR:
 
-![claim-check-overview](/platform-docs/img/Payload-Manager/claim-check-pattern.drawio.png)
+![claim-check-overview](/docs/img/Payload-Manager/claim-check-pattern.drawio.png)
 
 ## Get started
 
