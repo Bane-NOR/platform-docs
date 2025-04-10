@@ -23,8 +23,11 @@ The first step in getting access to the payload-manager service is contacting th
 at: <integrasjonsteamet@banenor.no>. We aim to respond within a day of receiving an e-mail.
 
 In the e-mail, please detail:
+
 - Why you would like to use the solution
+
 - Who or what systems in Bane NOR you want to interact with
+
 - How we should contact you for further details and questions
 
 ## Payload Manager Storage Account Structure
@@ -52,10 +55,12 @@ The API uses Microsoft's own blob storage API meaning that all API methods that 
 will also work with the API we present, given that you have the correct RBAC and ACL access.
 
 To check out the API, please go to our page here:
-- [Payload Manager API](/docs/integration/Payload-Manager/apis/v1)
+- [Payload Manager API](../apis/v1/)
 
 The API can also be found in Bane NOR's development portals given you have the correct access, found on these two URL's:
+
 - Staging: <https://test.api-portal.apps.banenor.no/>
+
 - Production: <https://api-portal.banenor.no/>
 
 ### Reaching the storage account
@@ -65,6 +70,7 @@ to be able to select the correct backend storage account, it uses an APIM policy
 in the JWT token to determine which backend to use.
 
 This Audience header **MUST** be scoped to the external storage account you are trying to reach. The accounts we expose are:
+
 | Environment         | Name                  |
 | --------------------| :-------------------- |
 | Development         | bnplmextnwestdev      |
@@ -72,9 +78,10 @@ This Audience header **MUST** be scoped to the external storage account you are 
 | Production          | bnplmextnwestprod     |
 
 This means that the audience **MUST** contain:
+
 https://&lt;storage-account-name&gt;.blob.core.windows.net
 
-For concrete examples on how to achieve this, please to go our user guide: [Uploading files with skyporten](/docs/integration/Payload-Manager/User-Guides/Uploading-files-with-skyporten.md)
+For concrete examples on how to achieve this, please to go our user guide: [Uploading files with skyporten](../User-Guides/Uploading-files-with-skyporten.md)
 
 ## Other relevant info
 

@@ -2,7 +2,7 @@
 
 The goal of an Event Issuer is to provide an infrastructure to abstract event delivery via a secured RESTful API to external users and systems such as SaaS. This allows external users to maintain service boundaries, and not directly depend on any specific message broker technology. The event issuer will have the possibility to consume events from Bane NOR and produce new events.
 
-![client-integration](/platform-docs/img/Event-Issuer/client-integration.drawio.svg)
+![client-integration](../../img/Event-Issuer/client-integration.drawio.svg)
 
 ## Consumer
 
@@ -35,7 +35,7 @@ In Confluent a Poison Pill is defined as:
 
 Event Issuer follows the cloudevents specification and will and uses the [HTTP protocol bindings](https://github.com/cloudevents/spec/blob/v1.0.2/cloudevents/bindings/http-protocol-binding.md) for all outgoing events. For producers, this will be based on the [JSON Event Format](https://github.com/cloudevents/spec/blob/v1.0.2/cloudevents/formats/json-format.md).
 
-For more technical specifications see the cloudevents [user guide section](./user-guides/cloudevents.md)
+For more technical specifications see the cloudevents [user guide section](User-Guides/cloudevents.md)
 
 ## Security
 

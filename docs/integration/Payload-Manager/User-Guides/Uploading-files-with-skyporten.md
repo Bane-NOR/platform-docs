@@ -18,7 +18,7 @@ The following guide will show you how you can start uploading or downloading fil
 
 - The blob store (storage container) is accessible from API Management which is just a proxy in front of a Storage Account.
 
-- To be able to upload and download files, your service needs an Entra identity with correct access to the blob store. Check out our guide on how to receive this here: [Skyporten](/integration/Payload-Manager/Getting-Started/Skyporten)
+- To be able to upload and download files, your service needs an Entra identity with correct access to the blob store. Check out our guide on how to receive this here: [Skyporten](../Getting-Started/Skyporten.md)
 
 - Since our API uses Microsofts own blob storage API, all methods from [Azure Blob Storage client library](https://learn.microsoft.com/en-us/azure/storage/blobs/storage-quickstart-blobs-dotnet?tabs=visual-studio%2Cmanaged-identity%2Croles-azure-portal%2Csign-in-azure-cli%2Cidentity-visual-studio&pivots=blob-storage-quickstart-scratch) will work.
 
