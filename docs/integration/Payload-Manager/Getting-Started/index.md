@@ -9,55 +9,77 @@ tags:
 
 # Getting Started
 
-The goal of this guide is to give a quick introduction to how one can get access to and start using the Payload Manager in BaneNOR.
+The goal of this guide is to give a quick introduction to how one can get access to and start using the Payload Manager in Bane NOR.
 
 [TOC]
 
+!!! info
+    The Payload Manager solution is only available to norwegian companies as per writing as the Authentication and Authorization
+    mechanism relies on **Skyporten**.
+
 ## Onboarding
 
-The first step in getting access to the payload-manager service is an onboarding meeting with the integration platform.
-Here the goal is to map out the thought-out use case/cases for your team and why the Payload Mangager would be a relevant solution.
-To start this onboarding process, you should have talked with your BaneNOR collaborators who should take care of the onboarding.
+The first step in getting access to the payload-manager service is contacting the integration platform team. To contact us, please send us an e-mail
+at: <integrasjonsteamet@banenor.no>. We aim to respond within a day of receiving an e-mail.
 
-If you are already onboarded and have been allowed to use the Payload Manager Service, the first step can be ignored.
+In the e-mail, please detail:
+- Why you would like to use the solution
+- Who or what systems in Bane NOR you want to interact with
+- How we should contact you for further details and questions
 
-## Domain for Storage Account Container
+## Payload Manager Storage Account Structure
 
-Our storage accounts used for the payload manager are divided into containers based on separate domains. Each domain has its own Kafka topic.
+The payload manager utilizes a storage account divided up into multiple containers.
+Each container represents a domain within Bane NOR meaning that the container you should use
+is based on the data that you will be producing. To decide on a container, please consult with the team you are
+communicating with within Bane NOR and the integration team if a new container is required.
 
-### Existing Domains
-
-If your domain is already set up within the payload manager, we simply need to grant you the necessary permissions to start using it.
+The storage accounts also employ hierarchical namespaces meaning that they employ ACL (Access control lists).
+This means that each folder in a container has an extra layer of security requiring both RBAC and ACL to be allowed to read/write.
 
 ## Using the Payload Manager
 
-Once you have access to the appropriate domain within the storage account, you can use the API to upload and download blobs.
-For more information, refer to [Skyporten](Skyporten.md).
+Once it has been decided that you will start using the payload manager, and it has been decided which container you should use,
+you can start looking into how to produce/consume files. For external parties such as yourself, Bane NOR has implemented the use
+of [Skyporten](Skyporten.md) for Authentication and Authorization purposes. The required resources in the Bane NOR's tenant are
+provided by the integration team on request, and will be handled as part of the onboarding procedure. For more information on
+how Bane NOR utilizes Skyporten to allow external parties access to the storage accounts, please refer to: [Skyporten](Skyporten.md).
 
-### Accessing the Payload Manager
+## Using the API
 
-Our storage account utilizes Microsoft's standard API, with support from microsoft libraries,
-making it easy to setup your custom applications for uploading and downloading blobs to the payload-manager storage accounts.
-For external users, Skyporten has to be used in conjunction.
+As mentioned, the Payload Manager exposes two storage accounts per environment through an API found in Bane NOR's APIM instance.
+The API uses Microsoft's own blob storage API meaning that all API methods that work directly against a regular storage account,
+will also work with the API we present, given that you have the correct RBAC and ACL access.
 
-Listening to the payload-manager topic for your domain can be done with
+To check out the API, please go to our page here:
+- [Payload Manager API](/docs/integration/Payload-Manager/apis/v1)
 
-1. **Event Issuer:** Use the [Event Issuer](../../Event-Issuer/) API to listen to the payload-manager topic.
+The API can also be found in Bane NOR's development portals given you have the correct access, found on these two URL's:
+- Staging: <https://test.api-portal.apps.banenor.no/>
+- Production: <https://api-portal.banenor.no/>
 
-## API Management DNS
+### Reaching the storage account
 
-We have different API Management instances depending on the environment you will be using.
+As mentioned, the API provided by Bane NOR exposes multiple storage accounts through the same api (two accounts per environment). For the API
+to be able to select the correct backend storage account, it uses an APIM policy which both validates the incoming JWT token and checks specifically the audience header
+in the JWT token to determine which backend to use.
 
-| Environment    | DNS |
-| -------- | ------- |
-| Dev  | <https://dev.api.apps.banenor.no>     |
-| Test/Staging | <https://test.api.apps.banenor.no>    |
-| Prod    | <https://api.banenor.no>   |
+This Audience header **MUST** be scoped to the external storage account you are trying to reach. The accounts we expose are:
+| Environment         | Name                  |
+| --------------------| :-------------------- |
+| Development         | bnplmextnwestdev      |
+| Staging             | bnplmextnwesttest     |
+| Production          | bnplmextnwestprod     |
 
-  <!-- <div class="next-step-card-container">
-    <div class="next-step-card">
-        <h3>Next Step: Get familiar with Payload Manager</h3>
-        <p><a href="/integration/Integration-platform/Payload-Manager/Getting-Started/API-and-Access-Control/">&#8594; Journey: Payload Manager security.</a></p>
-        <p><a href="/integration/Integration-platform/Payload-Manager/User-Guides/How-to-Upload-and-Download-files/">&#8594; How to upload files.</a></p>
-    </div>
-</div> -->
+This means that the audience **MUST** contain:
+https://&lt;storage-account-name&gt;.blob.core.windows.net
+
+For concrete examples on how to achieve this, please to go our user guide: [Uploading files with skyporten](/docs/integration/Payload-Manager/User-Guides/Uploading-files-with-skyporten.md)
+
+## Other relevant info
+
+### Consuming Payload Manager Events
+
+The Payload Manager presents a claim-check solution which produces messages to kafka. In the case that you have to consume information, the event-issuer can be utilized.
+
+**Event Issuer:** Use the [Event Issuer](../../Event-Issuer/) API to listen to the payload-manager topic.
