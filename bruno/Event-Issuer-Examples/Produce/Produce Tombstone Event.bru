@@ -1,0 +1,23 @@
+meta {
+  name: Produce Tombstone Event
+  type: http
+  seq: 5
+}
+
+delete {
+  url: {{hostUrl}}/{{tenantId}}/produce
+  body: json
+  auth: none
+}
+
+headers {
+  Content-Type: application/json
+  Ocp-Apim-Subscription-Key: {{apiKey}}
+}
+
+body:json {
+    {
+      "topic" : "cloud.event-issuer.test.v1",
+      "key" : "partitionkey"
+    }
+}
