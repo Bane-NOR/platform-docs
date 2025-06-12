@@ -13,6 +13,29 @@ Cloud events are sent by using the [HTTP Protocol Binding](https://github.com/cl
 !!! info
     Bane NOR is working on standardizing event messages around the cloud event specification which means that some event types might be missing from the cloud event headers.
 
+### What does this look like
+
+The CloudEvent is sent in [binary content mode](https://github.com/cloudevents/spec/blob/main/cloudevents/bindings/http-protocol-binding.md#31-binary-content-mode:~:text=3.1.-,Binary%20Content%20Mode,-The%20binary%20content). This means that the contents of the payload will be
+cloudevent.data while the CloudEvent attributes are passed as HTTP headers. Here is an example
+message:
+
+```http
+POST /event-endpoint HTTP/1.1
+Host: example.com
+Content-Type: application/json
+Ce-Specversion: 1.0
+Ce-Type: com.example.object.created
+Ce-Source: /mycontext
+Ce-Id: A234-1234-1234
+Ce-Time: 2025-06-12T12:00:00Z
+// Payload will be dependant on cotents of the original message.
+{
+  "objectId": "abc-123",
+  "status": "created"
+}
+
+```
+
 ## Authenticating subscriptions
 
 Some users require authentication and authorization to be able to communicate with their APIs. For this purpose, different types can be configured for the subscription. The following are supported:
