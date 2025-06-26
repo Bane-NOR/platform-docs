@@ -6,7 +6,7 @@ Subscriptions are the main mechanism for getting real-time events from the Bane 
 
 ## Webhook endpoint
 
-The endpoint can receive the event payload with additional metadata by using the [CloudEvents](cloudevents.md) HTTP binding.
+The endpoint can receive the event payload with additional metadata by using the [CloudEvents](../Getting-Started/cloudevents.md) HTTP binding.
 
 Cloud events are sent by using the [HTTP Protocol Binding](https://github.com/cloudevents/spec/blob/v1.0.2/cloudevents/bindings/http-protocol-binding.md). This means that the CloudEvents are part of the HTTP headers.
 
@@ -28,7 +28,7 @@ Ce-Type: com.example.object.created
 Ce-Source: /mycontext
 Ce-Id: A234-1234-1234
 Ce-Time: 2025-06-12T12:00:00Z
-// Payload will be dependant on cotents of the original message.
+// Payload will be dependant on contents of the original message.
 {
   "objectId": "abc-123",
   "status": "created"
@@ -85,9 +85,9 @@ The following IdPs are supported for fetching OAuth2.0 tokens:
 - [Maskinporten](https://www.digdir.no/felleslosninger/maskinporten/869)
 - [Entra ID](https://learn.microsoft.com/en-us/entra/fundamentals/whatis)
 
-The following diagram shows the system context for communication with an IdP.
+The following diagram shows the system context for communication with an IdP.@
 
-![system-context](/platform-docs/img/Event-Issuer/subscriptions/identity-provider.drawio.svg)
+![system-context](../../../../img/Event-Issuer/subscriptions/identity-provider.drawio.svg)
 
 #### Maskinporten
 

@@ -45,7 +45,7 @@ The only required header per writing is the API key for the event-issuer API fou
 
 ##### Body
 
-The content of the request are just for examples. For more concrete information on all subscription body options. Check out the [subscriptions page](../User-Guides/subscriptions.md)
+The content of the request are just for examples. For more concrete information on all subscription body options. Check out the [subscriptions page](../User-Guides/Subscriptions/index.md)
  ![image.png](../../../img/Event-Issuer/getting-started/Create-Subscription-Bruno-body.png)
 
 ### Producing your first message
