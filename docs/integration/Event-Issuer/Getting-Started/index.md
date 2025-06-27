@@ -26,7 +26,7 @@ Once logged in to the developer portal for the first time, you will be visible w
 
 ## Using Event Issuer
 
-As mentioned in the getting access chapter of this document, the Event Issuer is available through an API present in each environment instance of APIM meaning that all available endpoints and their descriptions can be seen there. The API documentation is also available on GitHub using Redocly rendering which can be easier to read. The document can be seen here: [GitHub version of API](../apis/v1.md/)
+As mentioned in the getting access chapter of this document, the Event Issuer is available through an API present in each environment instance of APIM meaning that all available endpoints and their descriptions can be seen there. The API documentation is also available on GitHub using Redocly rendering which can be easier to read. The document can be seen here: [GitHub version of API](../apis/v1/)
 
 This means that if you prefer, you can simply test sending API requests using for example [Bruno](https://www.usebruno.com/) based on the API documentation. Otherwise, here is a showcase of some Bruno requests that can help you get started with links to relevant repositories.
 
