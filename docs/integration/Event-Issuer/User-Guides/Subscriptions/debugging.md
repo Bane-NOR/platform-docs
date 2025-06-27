@@ -13,5 +13,27 @@ The Event Issuer has built-in Error Reporting linked to the GetSubscription meth
 - A HTTP status code
 - A timestamp for when the error occurred
 
-An example of how this looks in the Bruno API Client is showcased below:
-(Added when functionality is added)
+An example of how this response looks like:
+
+```json
+{
+  "id": "01JYP5ZRMZVSAG6VCJB6C430F5",
+  "applicationId": "Test-Subscription",
+  "eventName": "cloud.unauthorized.topic",
+  "url": "https://123spill.no/",
+  "apiKeyHeader": "Ocp-Apim-Subscription-Key",
+  "authentication": null,
+  "workerStatus": "Failed",
+  "createdAt": "2025-06-26T13:14:14.5600252Z",
+  "updatedAt": "2025-06-27T12:02:13.7163623Z",
+  "deletedAt": null,
+  "errors": [
+    {
+      "traceID": "00-f913d58d1fe8dbb6cb0400ba4646b389-23cde68619bb145b-01",
+      "errorMessage": "Not authorized for topic: cloud.unauthorized.topic",
+      "httpStatusCode": null,
+      "createdAt": "2025-06-27T12:02:13.7163623Z"
+    }
+  ]
+}
+```
