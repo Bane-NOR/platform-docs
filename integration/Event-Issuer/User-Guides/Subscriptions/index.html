@@ -7,10 +7,10 @@
 <meta content="width=device-width,initial-scale=1" name="viewport"/>
 <meta content="Platform Documentation" name="description"/>
 <link href="../../" rel="prev"/>
-<link href="../debugging/" rel="next"/>
+<link href="debugging/" rel="next"/>
 <link href="/platform-docs/img/baneNOR-favicon.png" rel="icon"/>
 <meta content="mkdocs-1.6.1, mkdocs-material-9.6.9" name="generator"/>
-<title>Cloudevents - BaneNOR Platform Documentation</title>
+<title>Subscriptions - BaneNOR Platform Documentation</title>
 <link href="../../../../assets/stylesheets/main.4af4bdda.min.css" rel="stylesheet"/>
 <link href="../../../../assets/stylesheets/palette.06af60db.min.css" rel="stylesheet"/>
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
@@ -33,7 +33,7 @@
 <input autocomplete="off" class="md-toggle" data-md-toggle="search" id="__search" type="checkbox"/>
 <label class="md-overlay" for="__drawer"></label>
 <div data-md-component="skip">
-<a class="md-skip" href="#cloudevents">
+<a class="md-skip" href="#subscriptions">
           Skip to content
         </a>
 </div>
@@ -57,7 +57,7 @@
 <div class="md-header__topic" data-md-component="header-topic">
 <span class="md-ellipsis">
             
-              Cloudevents
+              Subscriptions
             
           </span>
 </div>
@@ -189,88 +189,40 @@
             User Guides
           </label>
 <ul class="md-nav__list" data-md-scrollfix="">
-<li class="md-nav__item md-nav__item--active">
-<input class="md-nav__toggle md-toggle" id="__toc" type="checkbox"/>
-<label class="md-nav__link md-nav__link--active" for="__toc">
-<span class="md-ellipsis">
-    Cloudevents
-    
-  </span>
-<span class="md-nav__icon md-icon"></span>
-</label>
+<li class="md-nav__item md-nav__item--active md-nav__item--nested">
+<input checked="" class="md-nav__toggle md-toggle" id="__nav_1_1_2_1" type="checkbox"/>
+<div class="md-nav__link md-nav__container">
 <a class="md-nav__link md-nav__link--active" href="./">
 <span class="md-ellipsis">
-    Cloudevents
+    Subscriptions
     
   </span>
 </a>
-<nav aria-label="Table of contents" class="md-nav md-nav--secondary">
-<label class="md-nav__title" for="__toc">
+<label class="md-nav__link md-nav__link--active" for="__nav_1_1_2_1" id="__nav_1_1_2_1_label" tabindex="0">
 <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+</label>
+</div>
+<nav aria-expanded="true" aria-labelledby="__nav_1_1_2_1_label" class="md-nav" data-md-level="4">
+<label class="md-nav__title" for="__nav_1_1_2_1">
+<span class="md-nav__icon md-icon"></span>
+            Subscriptions
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="#subscription">
-<span class="md-ellipsis">
-      Subscription
-    </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#producers">
-<span class="md-ellipsis">
-      Producers
-    </span>
-</a>
-</li>
-</ul>
-</nav>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../debugging/">
+<a class="md-nav__link" href="debugging/">
 <span class="md-ellipsis">
     Debugging subscriptions
     
   </span>
 </a>
 </li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../faq/">
-<span class="md-ellipsis">
-    FAQ
-    
-  </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../getting-started/">
-<span class="md-ellipsis">
-    Getting Started
-    
-  </span>
-</a>
+</ul>
+</nav>
 </li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="../producing/">
 <span class="md-ellipsis">
     Producing
-    
-  </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../subscriptions/">
-<span class="md-ellipsis">
-    Subscriptions
-    
-  </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../tenants/">
-<span class="md-ellipsis">
-    Tenants
     
   </span>
 </a>
@@ -311,14 +263,6 @@
 </li>
 </ul>
 </nav>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../terminology/">
-<span class="md-ellipsis">
-    Event Issuer Terminology
-    
-  </span>
-</a>
 </li>
 </ul>
 </nav>
@@ -453,16 +397,27 @@
     </label>
 <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="#subscription">
+<a class="md-nav__link" href="#webhook-endpoint">
 <span class="md-ellipsis">
-      Subscription
+      Webhook endpoint
+    </span>
+</a>
+<nav aria-label="Webhook endpoint" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#what-does-this-look-like">
+<span class="md-ellipsis">
+      What does this look like
     </span>
 </a>
 </li>
+</ul>
+</nav>
+</li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#producers">
+<a class="md-nav__link" href="#create-subscription">
 <span class="md-ellipsis">
-      Producers
+      Create Subscription
     </span>
 </a>
 </li>
@@ -473,24 +428,54 @@
 </div>
 <div class="md-content" data-md-component="content">
 <article class="md-content__inner md-typeset">
-<h1 id="cloudevents">Cloudevents<a class="headerlink" href="#cloudevents" title="Permanent link">¶</a></h1>
-<p>The <a href="https://cloudevents.io/">cloudevents specification</a> is used by Event Issuer both for subscribed events and produced events. The difference is how Event Issuer is using the Cloud Events for events being subscribed to and when producing.</p>
-<h2 id="subscription">Subscription<a class="headerlink" href="#subscription" title="Permanent link">¶</a></h2>
-<p>Subscribed events are receiving the cloud events by using the <a href="https://github.com/cloudevents/spec/blob/v1.0.2/cloudevents/bindings/http-protocol-binding.md">HTTP Protocol Binding</a>. This means that the CloudEvents are part of the HTTP headers.</p>
-<h2 id="producers">Producers<a class="headerlink" href="#producers" title="Permanent link">¶</a></h2>
-<p>Producers needs to transmit the CloudEvent metadata by using the <a href="https://github.com/cloudevents/spec/blob/v1.0.2/cloudevents/formats/json-format.md">JSON Event Format</a>. The produce endpoints expect a content type of <code>application/cloudevents+json</code> as specified in section <code>3. Envelope</code> of the specification.</p>
+<h1 id="subscriptions">Subscriptions<a class="headerlink" href="#subscriptions" title="Permanent link">¶</a></h1>
+<p>(For concrete examples, check out our <a href="https://github.com/Bane-NOR/platform-docs/tree/main/bruno/Event-Issuer-Examples">bruno collection</a>)</p>
+<p>Subscriptions are the main mechanism for getting real-time events from the Bane NOR event backbone. The subscription is a reference to an application that wants events to be sent to a webhook endpoint. The subscriber can configure the authentication towards the endpoint in addition to an API key if that is needed.</p>
+<h2 id="webhook-endpoint">Webhook endpoint<a class="headerlink" href="#webhook-endpoint" title="Permanent link">¶</a></h2>
+<p>The endpoint can receive the event payload with additional metadata by using the <a href="../Getting-Started/cloudevents.md">CloudEvents</a> HTTP binding.</p>
+<p>Cloud events are sent by using the <a href="https://github.com/cloudevents/spec/blob/v1.0.2/cloudevents/bindings/http-protocol-binding.md">HTTP Protocol Binding</a>. This means that the CloudEvents are part of the HTTP headers.</p>
+<div class="admonition info">
+<p class="admonition-title">Info</p>
+<p>Bane NOR is working on standardizing event messages around the cloud event specification which means that some event types might be missing from the cloud event headers.</p>
+</div>
+<h3 id="what-does-this-look-like">What does this look like<a class="headerlink" href="#what-does-this-look-like" title="Permanent link">¶</a></h3>
+<p>The CloudEvent is sent in <a href="https://github.com/cloudevents/spec/blob/main/cloudevents/bindings/http-protocol-binding.md#31-binary-content-mode:~:text=3.1.-,Binary%20Content%20Mode,-The%20binary%20content">binary content mode</a>. This means that the contents of the payload will be
+cloudevent.data while the CloudEvent attributes are passed as HTTP headers. Here is an example
+message:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1"></a><a href="#__codelineno-0-1"><span class="linenos" data-linenos=" 1 "></span></a><span class="nf">POST</span> <span class="nn">/event-endpoint</span> <span class="kr">HTTP</span><span class="o">/</span><span class="m">1.1</span>
+<a id="__codelineno-0-2" name="__codelineno-0-2"></a><a href="#__codelineno-0-2"><span class="linenos" data-linenos=" 2 "></span></a><span class="na">Host</span><span class="o">:</span> <span class="l">example.com</span>
+<a id="__codelineno-0-3" name="__codelineno-0-3"></a><a href="#__codelineno-0-3"><span class="linenos" data-linenos=" 3 "></span></a><span class="na">Content-Type</span><span class="o">:</span> <span class="l">application/json</span>
+<a id="__codelineno-0-4" name="__codelineno-0-4"></a><a href="#__codelineno-0-4"><span class="linenos" data-linenos=" 4 "></span></a><span class="na">Ce-Specversion</span><span class="o">:</span> <span class="l">1.0</span>
+<a id="__codelineno-0-5" name="__codelineno-0-5"></a><a href="#__codelineno-0-5"><span class="linenos" data-linenos=" 5 "></span></a><span class="na">Ce-Type</span><span class="o">:</span> <span class="l">com.example.object.created</span>
+<a id="__codelineno-0-6" name="__codelineno-0-6"></a><a href="#__codelineno-0-6"><span class="linenos" data-linenos=" 6 "></span></a><span class="na">Ce-Source</span><span class="o">:</span> <span class="l">/mycontext</span>
+<a id="__codelineno-0-7" name="__codelineno-0-7"></a><a href="#__codelineno-0-7"><span class="linenos" data-linenos=" 7 "></span></a><span class="na">Ce-Id</span><span class="o">:</span> <span class="l">A234-1234-1234</span>
+<a id="__codelineno-0-8" name="__codelineno-0-8"></a><a href="#__codelineno-0-8"><span class="linenos" data-linenos=" 8 "></span></a><span class="na">Ce-Time</span><span class="o">:</span> <span class="l">2025-06-12T12:00:00Z</span>
+<a id="__codelineno-0-9" name="__codelineno-0-9"></a><a href="#__codelineno-0-9"><span class="linenos" data-linenos=" 9 "></span></a><span class="err">//</span> <span class="l">Payload will be dependant on contents of the original message.</span>
+<a id="__codelineno-0-10" name="__codelineno-0-10"></a><a href="#__codelineno-0-10"><span class="linenos" data-linenos="10 "></span></a><span class="err">{</span>
+<a id="__codelineno-0-11" name="__codelineno-0-11"></a><a href="#__codelineno-0-11"><span class="linenos" data-linenos="11 "></span></a><span class="w">  </span><span class="nt">"objectId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"abc-123"</span><span class="p">,</span>
+<a id="__codelineno-0-12" name="__codelineno-0-12"></a><a href="#__codelineno-0-12"><span class="linenos" data-linenos="12 "></span></a><span class="w">  </span><span class="nt">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"created"</span>
+<a id="__codelineno-0-13" name="__codelineno-0-13"></a><a href="#__codelineno-0-13"><span class="linenos" data-linenos="13 "></span></a><span class="p">}</span>
+</code></pre></div>
+<h2 id="create-subscription">Create Subscription<a class="headerlink" href="#create-subscription" title="Permanent link">¶</a></h2>
+<p>The following command can be used to create a subscription that uses an API key and basic authentication.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1"></a><a href="#__codelineno-1-1"><span class="linenos" data-linenos="1 "></span></a>curl -H "Ocp-Apim-Subscription-Key: ApiKey" https://&lt;bane-nor-api-endpoint&gt;/event-issuer/v1alpha/{tenantId}/subscriptions \ 
+<a id="__codelineno-1-2" name="__codelineno-1-2"></a><a href="#__codelineno-1-2"><span class="linenos" data-linenos="2 "></span></a>-d '{"applicationId": "my-application", "event": "event-name", "URL": "https://my-endpoint.com/events}, \ 
+<a id="__codelineno-1-3" name="__codelineno-1-3"></a><a href="#__codelineno-1-3"><span class="linenos" data-linenos="3 "></span></a>"apiKey": { "header": "Ocp-Apim-Subscription-Key", "key": "API-key" }, \ 
+<a id="__codelineno-1-4" name="__codelineno-1-4"></a><a href="#__codelineno-1-4"><span class="linenos" data-linenos="4 "></span></a>"authentication": { "username": "user1", "password": "my-secure-password" }'
+</code></pre></div>
+<p>If only an API key is needed don't set the <code>authentication</code> and and only the <code>apiKey</code> section.</p>
 <aside class="md-source-file">
 <span class="md-source-file__fact">
 <span class="md-icon" title="Last update">
 <svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"></path></svg>
 </span>
-<span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago" title="April 10, 2025 10:44:37"><span class="timeago" datetime="2025-04-10T10:44:37+00:00" locale="en"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date" title="April 10, 2025 10:44:37">2025-04-10</span>
+<span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago" title="July 7, 2025 04:54:58"><span class="timeago" datetime="2025-07-07T04:54:58+00:00" locale="en"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date" title="July 7, 2025 04:54:58">2025-07-07</span>
 </span>
 <span class="md-source-file__fact">
 <span class="md-icon" title="Created">
 <svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M14.47 15.08 11 13V7h1.5v5.25l3.08 1.83c-.41.28-.79.62-1.11 1m-1.39 4.84c-.36.05-.71.08-1.08.08-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8c0 .37-.03.72-.08 1.08.69.1 1.33.32 1.92.64.1-.56.16-1.13.16-1.72 0-5.5-4.5-10-10-10S2 6.5 2 12s4.47 10 10 10c.59 0 1.16-.06 1.72-.16-.32-.59-.54-1.23-.64-1.92M18 15v3h-3v2h3v3h2v-3h3v-2h-3v-3z"></path></svg>
 </span>
-<span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago" title="April 10, 2025 10:44:37"><span class="timeago" datetime="2025-04-10T10:44:37+00:00" locale="en"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date" title="April 10, 2025 10:44:37">2025-04-10</span>
+<span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago" title="July 7, 2025 04:54:58"><span class="timeago" datetime="2025-07-07T04:54:58+00:00" locale="en"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date" title="July 7, 2025 04:54:58">2025-07-07</span>
 </span>
 </aside>
 </article>
