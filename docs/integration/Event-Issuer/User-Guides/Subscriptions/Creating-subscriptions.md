@@ -1,42 +1,6 @@
-# Subscriptions
+# Creating subscriptions
 
-(For concrete examples, check out our [bruno collection](https://github.com/Bane-NOR/platform-docs/tree/main/bruno/Event-Issuer-Examples))
-
-Subscriptions are the main mechanism for getting real-time events from the Bane NOR event backbone. The subscription is a reference to an application that wants events to be sent to a webhook endpoint. The subscriber can configure the authentication towards the endpoint in addition to an API key if that is needed.
-
-## Webhook endpoint
-
-The endpoint can receive the event payload with additional metadata by using the [CloudEvents](cloudevents.md) HTTP binding.
-
-Cloud events are sent by using the [HTTP Protocol Binding](https://github.com/cloudevents/spec/blob/v1.0.2/cloudevents/bindings/http-protocol-binding.md). This means that the CloudEvents are part of the HTTP headers.
-
-!!! info
-    Bane NOR is working on standardizing event messages around the cloud event specification which means that some event types might be missing from the cloud event headers.
-
-### What does this look like
-
-The CloudEvent is sent in [binary content mode](https://github.com/cloudevents/spec/blob/main/cloudevents/bindings/http-protocol-binding.md#31-binary-content-mode:~:text=3.1.-,Binary%20Content%20Mode,-The%20binary%20content). This means that the contents of the payload will be
-cloudevent.data while the CloudEvent attributes are passed as HTTP headers. Here is an example
-message:
-
-```http
-POST /event-endpoint HTTP/1.1
-Host: example.com
-Content-Type: application/json
-Ce-Specversion: 1.0
-Ce-Type: com.example.object.created
-Ce-Source: /mycontext
-Ce-Id: A234-1234-1234
-Ce-Time: 2025-06-12T12:00:00Z
-// Payload will be dependant on cotents of the original message.
-{
-  "objectId": "abc-123",
-  "status": "created"
-}
-
-```
-
-## Authenticating subscriptions
+## Authentication
 
 Some users require authentication and authorization to be able to communicate with their APIs. For this purpose, different types can be configured for the subscription. The following are supported:
 
@@ -47,7 +11,7 @@ Some users require authentication and authorization to be able to communicate wi
 
 The idea is that the end users or services can configure the needed information to authenticate towards the webhook endpoint and update the configuration as needed.
 
-### API Key
+## API Key
 
 API Key is something that is created when subscribing to certain APIs or products. The key can be used both as a token for an API Management system to check if and how the request should be handled, and in monitoring situations to check that the number of requests is within for example rate limits set by the API owner.
 
@@ -85,9 +49,9 @@ The following IdPs are supported for fetching OAuth2.0 tokens:
 - [Maskinporten](https://www.digdir.no/felleslosninger/maskinporten/869)
 - [Entra ID](https://learn.microsoft.com/en-us/entra/fundamentals/whatis)
 
-The following diagram shows the system context for communication with an IdP.
+The following diagram shows the system context for communication with an IdP.@
 
-![system-context](/platform-docs/img/Event-Issuer/subscriptions/identity-provider.drawio.svg)
+![system-context](../../../../img/Event-Issuer/subscriptions/identity-provider.drawio.svg)
 
 #### Maskinporten
 
@@ -204,15 +168,3 @@ Access control lists enforce authorization based on a list of application IDs th
 ###### Application permissions
 
 For data owned by organizations, Microsoft recommends using application permissions. To use application roles with your API, you need to expose the app roles in the API's app registration, and then configure the required roles in your client's (the subscription) app registration. The user who creates a subscription will also have to create an app registration in their organization that they provide the necessary permissions.
-
-## Create Subscription
-
-The following command can be used to create a subscription that uses an API key and basic authentication.
-
-```curl
-curl -H "Ocp-Apim-Subscription-Key: ApiKey" https://<bane-nor-api-endpoint>/event-issuer/v1alpha/{tenantId}/subscriptions -d
-'{"applicationId": "my-application", "event": "event-name", "URL": "https://my-endpoint.com/events}, "apiKey":
-{ "header": "Ocp-Apim-Subscription-Key", "key": "API-key" }, "authentication": { "username": "user1", "password": "my-secure-password" }'
-```
-
-If only an API key is needed don't set the `authentication` and and only the `apiKey` section.

@@ -11,15 +11,15 @@
   },
   "servers": [
     {
-      "url": "https://event-issuer-api.apps-int.banenor.no",
+      "url": "https://api.banenor.no/event-issuer/v1",
       "description": "Production instance for Bane NOR, this will have the alpha, beta and the latest released version available."
     },
     {
-      "url": "https://event-issuer-api.review.apps-int.banenor.no",
+      "url": "https://dev.api.apps.banenor.no/event-issuer/v1",
       "description": "Internal development instance"
     },
     {
-      "url": "https://event-issuer-api.staging.apps-int.banenor.no",
+      "url": "https://test.api.apps.banenor.no/event-issuer/v1",
       "description": "Internal test instance"
     }
   ],
@@ -407,6 +407,52 @@
             "$ref": "#/components/responses/500-internal-server-error"
           }
         }
+      },
+      "delete": {
+        "summary": "Tombstone key for topic",
+        "operationId": "delete",
+        "tags": [
+          "Produce"
+        ],
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/tenantId"
+          }
+        ],
+        "requestBody": {
+          "description": "Topic and partitionkey to send tombstone event for",
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ProduceTombstoneEvent"
+              }
+            }
+          }
+        },
+        "responses": {
+          "204": {
+            "description": "Ok"
+          },
+          "400": {
+            "$ref": "#/components/responses/400-bad-request"
+          },
+          "401": {
+            "$ref": "#/components/responses/401-unauthorized"
+          },
+          "403": {
+            "$ref": "#/components/responses/403-forbidden"
+          },
+          "404": {
+            "$ref": "#/components/responses/404-not-found"
+          },
+          "422": {
+            "$ref": "#/components/responses/422-unprocessable-content"
+          },
+          "500": {
+            "$ref": "#/components/responses/500-internal-server-error"
+          }
+        }
       }
     },
     "/{tenantId}/produce/batch": {
@@ -641,6 +687,40 @@
             "description": "The URL of the subscription.",
             "example": "http://example.com"
           },
+          "apiKeyHeader": {
+            "anyOf": [
+              {
+                "type": "null"
+              },
+              {
+                "type": "object",
+                "properties": {
+                  "header": {
+                    "type": "string",
+                    "description": "Header name specified by end user if specified",
+                    "example": "Ocp-Apim-Subscription-Key"
+                  }
+                }
+              }
+            ]
+          },
+          "authentication": {
+            "anyOf": [
+              {
+                "type": "null"
+              },
+              {
+                "type": "object",
+                "properties": {
+                  "type": {
+                    "type": "string",
+                    "description": "What authentication type has been used for subscription",
+                    "example": "Maskinporten"
+                  }
+                }
+              }
+            ]
+          },
           "createdAt": {
             "type": "string",
             "format": "date-time",
@@ -650,6 +730,32 @@
             "type": "string",
             "format": "date-time",
             "description": "Time at which the object was updated."
+          },
+          "errors": {
+            "type": "array",
+            "description": "Nullable list of errors",
+            "items": {
+              "type": "object",
+              "properties": {
+                "errorMessage": {
+                  "type": "string",
+                  "description": "Message describing potential error"
+                },
+                "traceId": {
+                  "type": "string",
+                  "description": "Trace for keeping track of error"
+                },
+                "httpStatusCode": {
+                  "type": "string",
+                  "description": "HTTP status code for the error"
+                },
+                "createdAt": {
+                  "type": "string",
+                  "format": "date-time",
+                  "description": "Time at which the error was created"
+                }
+              }
+            }
           }
         }
       },
@@ -912,6 +1018,28 @@
               "Persisted"
             ],
             "description": "The status of the operation from the delivery result from the event backbone"
+          }
+        }
+      },
+      "ProduceTombstoneEvent": {
+        "type": "object",
+        "required": [
+          "id",
+          "topic",
+          "partitionkey"
+        ],
+        "properties": {
+          "id": {
+            "type": "string",
+            "description": "Name of event also used as unique ID."
+          },
+          "topicName": {
+            "type": "string",
+            "description": "Name of topic for the request"
+          },
+          "partitionkey": {
+            "type": "string",
+            "description": "The key of the event to be tombstoned. This is the same key used when producing the event."
           }
         }
       },

@@ -35,7 +35,7 @@ In Confluent a Poison Pill is defined as:
 
 Event Issuer follows the cloudevents specification and will and uses the [HTTP protocol bindings](https://github.com/cloudevents/spec/blob/v1.0.2/cloudevents/bindings/http-protocol-binding.md) for all outgoing events. For producers, this will be based on the [JSON Event Format](https://github.com/cloudevents/spec/blob/v1.0.2/cloudevents/formats/json-format.md).
 
-For more technical specifications see the cloudevents [user guide section](User-Guides/cloudevents.md)
+For more technical specifications see the cloudevents [user guide section](Getting-Started/cloudevents.md)
 
 ## Security
 
