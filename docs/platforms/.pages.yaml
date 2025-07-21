@@ -1,0 +1,9 @@
+nav:
+    
+    - Platforms: index.md
+    - Data & Analysis Platform:
+      - data/index.md
+    - Development Platform: 
+      - developer/index.md
+    - Integration Platform: 
+      - integration/index.md
