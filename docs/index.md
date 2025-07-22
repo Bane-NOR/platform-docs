@@ -1,3 +1,8 @@
+<!DOCTYPE html>
+<meta charset="utf-8">
+<meta http-equiv="refresh" content="0; URL=https://bane-nor.github.io/docs/">
+<link rel="canonical" href="https://bane-nor.github.io/docs/">
+
 # Bane NOR External Documentation
 
 <div style="display: flex; align-items: center; height: 100px;">
