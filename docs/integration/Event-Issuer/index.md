@@ -1,3 +1,7 @@
+<!DOCTYPE html>
+<meta charset="utf-8">
+<meta http-equiv="refresh" content="0; URL=https://bane-nor.github.io/docs/platforms/integration/Event-Issuer/">
+<link rel="canonical" href="[https://example.com/](https://bane-nor.github.io/docs/platforms/integration/Event-Issuer/)">
 # Why Event Issuer exists
 
 The goal of an Event Issuer is to provide an infrastructure to abstract event delivery via a secured RESTful API to external users and systems such as SaaS. This allows external users to maintain service boundaries, and not directly depend on any specific message broker technology. The event issuer will have the possibility to consume events from Bane NOR and produce new events.
