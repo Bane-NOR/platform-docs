@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <meta charset="utf-8">
-<title>Redirecting to [Bane-NOR docs](https://bane-nor.github.io/docs/)
+<title Redirecting to [Bane-NOR docs](https://bane-nor.github.io/docs/) >
 <meta http-equiv="refresh" content="0; URL=https://bane-nor.github.io/docs/">
 <link rel="canonical" href="https://bane-nor.github.io/docs/">
 
