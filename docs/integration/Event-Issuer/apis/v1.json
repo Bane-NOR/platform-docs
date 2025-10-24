@@ -11,15 +11,15 @@
   },
   "servers": [
     {
-      "url": "https://event-issuer-api-v1.apps-int.banenor.no",
+      "url": "https://api.banenor.no/event-issuer/v1",
       "description": "Production instance for Bane NOR, this will have the alpha, beta and the latest released version available."
     },
     {
-      "url": "https://event-issuer-api-v1.review.apps-int.banenor.no",
+      "url": "https://dev.api.apps.banenor.no/event-issuer/v1",
       "description": "Internal development instance"
     },
     {
-      "url": "https://event-issuer-api-v1.staging.apps-int.banenor.no",
+      "url": "https://test.api.apps.banenor.no/event-issuer/v1",
       "description": "Internal test instance"
     }
   ],
