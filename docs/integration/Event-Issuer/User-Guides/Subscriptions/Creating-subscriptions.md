@@ -17,6 +17,18 @@ API Key is something that is created when subscribing to certain APIs or product
 
 Event Issuer supports the use of an API Key configuration which can be configured with one of the other authentication mechanisms if both are needed.
 
+```json
+{
+    "applicationId": "application1",
+    "eventName": "cloud.open.operational.train-arrived-at-station.v1",
+    "url": "https://test.no/test",
+    "apiKey": {
+        "header": "Ocp-Apim-Subscription-Key", // Can be any value, eks x-my-api-key
+        "key": "jnfdi923r8fnaszy12orf98032nrcn7u982" // This is not a real key
+ }
+}
+```
+
 ### Basic Auth
 
 Basic authentication with a username and password is supported as a simple mechanism for getting access to a webhook.
@@ -30,7 +42,7 @@ Basic authentication with a username and password is supported as a simple mecha
     "url": "https://test.no/test",
     "apiKey": {
         "header": "Ocp-Apim-Subscription-Key",
-        "key": "jnfdi923r8fnaszy12orf98032nrcn7u982"
+        "key": "jnfdi923r8fnaszy12orf98032nrcn7u982" // This is not a real key
  },
     "authentication": {
         "type": "BasicAuth",
@@ -66,7 +78,7 @@ Example:
     "url": "https://test.no/test",
     "apiKey": {
         "header": "Ocp-Apim-Subscription-Key",
-        "key": "jnfdi923r8fnaszy12orf98032nrcn7u982"
+        "key": "jnfdi923r8fnaszy12orf98032nrcn7u982" // This is not a real key
  },
     "authentication": {
         "type": "Maskinporten",
